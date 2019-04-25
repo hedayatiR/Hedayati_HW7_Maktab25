@@ -168,6 +168,19 @@ public class TicTacToe extends javax.swing.JFrame implements ActionListener {
                     System.out.println("This place selected before. Select another one.");
             }
         }
+        if (counter==9) {
+            JOptionPane.showMessageDialog(null, "The game finished & will be reset!");
+            resetGame();
+        }
+
+        if (e.getSource() == jButtonReset)
+            resetGame();
     }
     // --------------------------------------------------------------------
+    public void resetGame(){
+        for (int i = 0; i < jButtons.length; i++) {
+            jButtons[i].setIcon(null);
+        }
+        counter = 0;
+    }
 }
